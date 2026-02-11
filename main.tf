@@ -58,6 +58,8 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
+#Security group should NOT have inline group, only ingress and egress
+
 resource "aws_security_group" "web_sg" {
   name_prefix = "web-sg"
   vpc_id      = aws_vpc.dev_vpc.id
